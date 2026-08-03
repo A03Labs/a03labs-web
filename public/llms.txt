@@ -1,0 +1,49 @@
+# A03 Labs
+
+> A03 Labs is a software studio that designs, builds, and ships web and mobile
+> products for startups and growing teams. We treat architecture as seriously
+> as code — discovery, design, and a real plan before a single sprint starts.
+
+Website: https://a03labs.com
+Contact: hia03labs@gmail.com
+
+## What we do
+
+- **Web & Product Development** — Full-stack web and mobile applications built
+  for speed, scale, and maintainability.
+- **Product Design** — User-centered UI/UX design that turns complex problems
+  into simple, usable products.
+- **Cloud & DevOps** — Infrastructure, CI/CD, and cloud architecture so teams
+  ship with confidence.
+- **Technical Consulting** — Hands-on advisory for teams navigating
+  architecture decisions and technical debt.
+
+## How we work
+
+Our process runs in a fixed sequence, not ad-hoc sprints:
+
+1. **Discovery** — Understand the business, the users, and the real problem,
+   not just the feature list.
+2. **Design & Architecture** — Define user flows, data models, and API
+   contracts upfront.
+3. **Build** — Focused development cycles with regular demos and working
+   software early.
+4. **Launch** — Full deployment, monitoring setup, and knowledge transfer.
+5. **Support** — Ongoing iteration and a long-term engineering partnership.
+
+Clients get direct access to the engineers building their product (not an
+account manager relaying to outsourced contractors), and a working demo every
+cycle instead of a status update once a sprint.
+
+## Selected work
+
+- **Dr Ibiso Hart** (https://www.dribisohart.com/) — Personal brand site for a
+  certified lifestyle coach, built to convert visitors into discovery-session
+  bookings.
+- **Lifematics Lifestyle** (https://lifematicswithdribisohart.com/) — Coaching
+  platform bringing together courses, workshops, and content under one brand.
+
+## Contact
+
+A03 Labs is currently taking on new projects. Reach out at
+hia03labs@gmail.com.
