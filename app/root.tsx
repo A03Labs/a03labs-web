@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import {
   isRouteErrorResponse,
   Links,
@@ -10,6 +11,35 @@ import {
 import type { Route } from "./+types/root";
 import "./app.css";
 
+function AppLoader() {
+  const [visible, setVisible] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setVisible(false), 700);
+    return () => clearTimeout(timer);
+  }, []);
+
+  return (
+    <div
+      aria-hidden={!visible}
+      className={`fixed inset-0 z-50 flex items-center justify-center bg-ink transition-opacity duration-500 ${
+        visible ? "opacity-100" : "pointer-events-none opacity-0"
+      }`}
+    >
+      <div className="flex flex-col items-center gap-4">
+        <img
+          src="/images/IMG_8060.png"
+          alt="A03 Labs"
+          className="h-12 w-auto animate-pulse invert"
+        />
+        <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-white/40">
+          Loading
+        </span>
+      </div>
+    </div>
+  );
+}
+
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
   {
@@ -19,7 +49,7 @@ export const links: Route.LinksFunction = () => [
   },
   {
     rel: "stylesheet",
-    href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
+    href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap",
   },
 ];
 
@@ -33,6 +63,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
+        <AppLoader />
         {children}
         <ScrollRestoration />
         <Scripts />
