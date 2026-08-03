@@ -144,22 +144,22 @@ export function Landing() {
     <div className="bg-paper dark:bg-ink">
       {/* Header */}
       <header className="fixed inset-x-4 top-4 z-20 sm:inset-x-6">
-        <nav className="mx-auto flex max-w-6xl items-center justify-between rounded-full border border-gray-100 bg-paper/90 px-6 py-3 shadow-lg shadow-black/5 backdrop-blur-sm dark:border-white/10 dark:bg-ink/90">
-          <a href="/" className="flex items-center gap-2">
+        <nav className="mx-auto flex max-w-6xl items-center justify-between gap-2 rounded-full border border-gray-100 bg-paper/90 px-3 py-2 shadow-lg shadow-black/5 backdrop-blur-sm sm:px-6 sm:py-3 dark:border-white/10 dark:bg-ink/90">
+          <a href="/" className="flex min-w-0 items-center gap-2">
             <img
               src="/images/IMG_8060.png"
               alt="A03 Labs"
-              className="h-8 w-auto dark:invert"
+              className="h-6 w-auto shrink-0 dark:invert sm:h-8"
             />
-            <span className="font-mono text-sm font-medium tracking-[0.2em] text-gray-900 uppercase dark:text-white">
+            <span className="whitespace-nowrap font-mono text-xs font-medium tracking-[0.2em] text-gray-900 uppercase sm:text-sm dark:text-white">
               A03 Labs
             </span>
           </a>
-          <div className="flex items-center gap-3">
+          <div className="flex shrink-0 items-center gap-2 sm:gap-3">
             <ThemeToggle />
             <a
               href="mailto:hia03labs@gmail.com"
-              className="inline-flex items-center rounded-full border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-ink transition-colors hover:bg-gray-50 dark:border-white/10 dark:hover:bg-gray-100"
+              className="inline-flex items-center whitespace-nowrap rounded-full border border-gray-200 bg-white px-3 py-1.5 text-xs font-medium text-ink transition-colors hover:bg-gray-50 sm:px-4 sm:py-2 sm:text-sm dark:border-white/10 dark:hover:bg-gray-100"
             >
               Get in touch
             </a>
@@ -293,29 +293,33 @@ export function Landing() {
               </p>
             </Reveal>
 
-            <div className="relative mt-12 overflow-hidden rounded-2xl border border-white/10 bg-ink px-6 py-8 sm:px-10 sm:py-10">
+            <div className="relative mt-12 overflow-hidden rounded-2xl border border-gray-100 bg-white px-6 py-8 sm:px-10 sm:py-10 dark:border-white/10 dark:bg-ink">
               <CornerMarks />
-              <div className="divide-y divide-white/10 font-mono text-xs sm:text-sm">
+              <div className="divide-y divide-gray-100 font-mono text-xs sm:text-sm dark:divide-white/10">
                 {reasons.map((reason, index) => (
                   <Reveal
                     key={reason.label}
                     delay={index * 100}
                     className="grid gap-2.5 py-6 first:pt-0 last:pb-0"
                   >
-                    <span className="text-white/30">// {reason.label}</span>
-                    <p className="flex gap-3 text-white/40">
+                    <span className="text-gray-400 dark:text-white/30">
+                      // {reason.label}
+                    </span>
+                    <p className="flex gap-3 text-gray-400 dark:text-white/40">
                       <span aria-hidden="true" className="select-none">
                         -
                       </span>
-                      <span className="line-through decoration-white/20">
+                      <span className="line-through decoration-gray-300 dark:decoration-white/20">
                         {reason.typical}
                       </span>
                     </p>
-                    <p className="flex gap-3 text-teal-400">
+                    <p className="flex gap-3 text-teal-600 dark:text-teal-400">
                       <span aria-hidden="true" className="select-none">
                         +
                       </span>
-                      <span className="text-white">{reason.a03}</span>
+                      <span className="text-gray-900 dark:text-white">
+                        {reason.a03}
+                      </span>
                     </p>
                   </Reveal>
                 ))}
@@ -386,24 +390,24 @@ export function Landing() {
               </p>
             </Reveal>
 
-            <div className="relative mt-12 overflow-hidden rounded-2xl border border-white/10 bg-ink px-8 py-12 sm:px-12">
+            <div className="relative mt-12 overflow-hidden rounded-2xl border border-gray-100 bg-white px-8 py-12 sm:px-12 dark:border-white/10 dark:bg-ink">
               <CornerMarks />
               <ol className="relative">
                 <div
                   aria-hidden="true"
-                  className="absolute bottom-6 left-6 top-6 w-px bg-white/10"
+                  className="absolute bottom-6 left-6 top-6 w-px bg-gray-100 dark:bg-white/10"
                 />
                 {process.map((item, index) => (
                   <li key={item.title} className="relative pb-12 last:pb-0">
                     <Reveal delay={index * 100} className="flex gap-6">
-                      <span className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-teal-500/30 bg-ink font-mono text-sm text-teal-400">
+                      <span className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-teal-500/30 bg-white font-mono text-sm text-teal-600 dark:bg-ink dark:text-teal-400">
                         {String(index + 1).padStart(2, "0")}
                       </span>
                       <div className="pt-1.5">
-                        <h3 className="text-lg font-semibold text-white">
+                        <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
                           {item.title}
                         </h3>
-                        <p className="mt-2 max-w-xl text-sm leading-relaxed text-gray-400">
+                        <p className="mt-2 max-w-xl text-sm leading-relaxed text-gray-600 dark:text-gray-400">
                           {item.description}
                         </p>
                       </div>
@@ -485,34 +489,34 @@ export function Landing() {
 
         {/* 05 — CTA */}
         <section className="px-6 py-24 sm:py-32">
-          <div className="relative mx-auto max-w-3xl overflow-hidden rounded-2xl border border-white/10 bg-ink px-8 py-12 sm:px-12 sm:py-16">
+          <div className="relative mx-auto max-w-3xl overflow-hidden rounded-2xl border border-gray-100 bg-white px-8 py-12 sm:px-12 sm:py-16 dark:border-white/10 dark:bg-ink">
             <CornerMarks />
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:56px_56px]"
+              className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:56px_56px] dark:bg-[linear-gradient(to_right,rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.025)_1px,transparent_1px)]"
             />
 
             <Reveal className="relative">
-              <span className="font-mono text-xs uppercase tracking-[0.25em] text-teal-400">
+              <span className="font-mono text-xs uppercase tracking-[0.25em] text-teal-600 dark:text-teal-400">
                 05 — Get in touch
               </span>
-              <h2 className="mt-4 text-balance font-display text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+              <h2 className="mt-4 text-balance font-display text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl dark:text-white">
                 Have an idea?
                 <br />
                 Feel free to reach out.
               </h2>
 
-              <div className="mt-10 flex flex-col items-stretch gap-4 rounded-3xl border border-white/10 bg-white/5 p-4 sm:flex-row sm:items-center sm:justify-between sm:rounded-full sm:p-2 sm:pl-4">
+              <div className="mt-10 flex flex-col items-stretch gap-4 rounded-3xl border border-gray-100 bg-gray-50 p-4 sm:flex-row sm:items-center sm:justify-between sm:rounded-full sm:p-2 sm:pl-4 dark:border-white/10 dark:bg-white/5">
                 <div className="flex items-center gap-3">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/10">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gray-100 dark:bg-white/10">
                     <img
                       src="/images/IMG_8060.png"
                       alt=""
                       aria-hidden="true"
-                      className="h-5 w-auto invert"
+                      className="h-5 w-auto dark:invert"
                     />
                   </span>
-                  <span className="text-sm font-medium text-white sm:text-base">
+                  <span className="text-sm font-medium text-gray-900 sm:text-base dark:text-white">
                     Turn ideas into shipped software
                   </span>
                 </div>
