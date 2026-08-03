@@ -1,4 +1,5 @@
 import { Reveal } from "./reveal";
+import { ThemeToggle } from "./theme-toggle";
 
 function CornerMarks() {
   return (
@@ -22,6 +23,47 @@ function CornerMarks() {
     </>
   );
 }
+
+function Bridge({ children }: { children: React.ReactNode }) {
+  return (
+    <Reveal className="mx-auto flex max-w-6xl items-center gap-4 px-6">
+      <span
+        aria-hidden="true"
+        className="h-px flex-1 bg-gray-200 dark:bg-white/10"
+      />
+      <p className="whitespace-nowrap font-mono text-xs text-gray-400 dark:text-gray-600">
+        {children}
+      </p>
+      <span
+        aria-hidden="true"
+        className="h-px flex-1 bg-gray-200 dark:bg-white/10"
+      />
+    </Reveal>
+  );
+}
+
+const reasons = [
+  {
+    label: "Team",
+    typical: "Account manager relaying to outsourced contractors",
+    a03: "Direct access to the engineers building your product",
+  },
+  {
+    label: "Process",
+    typical: '"Agile" in name, chaos in practice',
+    a03: "A fixed sequence — discovery, architecture, build, launch, support",
+  },
+  {
+    label: "Cadence",
+    typical: "A status update once a sprint",
+    a03: "Working software and a live demo, every cycle",
+  },
+  {
+    label: "After launch",
+    typical: "Invoice sent, phone stops ringing",
+    a03: "Monitoring, iteration, and a long-term partnership",
+  },
+];
 
 const capabilities = [
   {
@@ -80,16 +122,20 @@ const process = [
 
 const projects = [
   {
-    name: "Project One",
-    category: "Fintech · Web App",
+    name: "Dr Ibiso Hart",
+    category: "Portfolio · Web App",
     description:
-      "A short summary of the problem, what we built, and the outcome for the client.",
+      "A personal brand site for a certified lifestyle coach, built to convert visitors into discovery-session bookings.",
+    link: "https://www.dribisohart.com/",
+    image: "/images/projects/dr-ibiso.png",
   },
   {
-    name: "Project Two",
-    category: "Healthcare · Mobile App",
+    name: "Lifematics Lifestyle",
+    category: "Lifestyle · Web App",
     description:
-      "A short summary of the problem, what we built, and the outcome for the client.",
+      "A coaching platform bringing together courses, workshops, and content under one brand for a growing personal-development business.",
+    link: "https://lifematicswithdribisohart.com/",
+    image: "/images/projects/lifematics.png",
   },
 ];
 
@@ -109,37 +155,39 @@ export function Landing() {
               A03 Labs
             </span>
           </a>
-          <a
-            href="mailto:hia03labs@gmail.com"
-            className="inline-flex items-center rounded-full border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-ink transition-colors hover:bg-gray-50 dark:border-white/10 dark:hover:bg-gray-100"
-          >
-            Get in touch
-          </a>
+          <div className="flex items-center gap-3">
+            <ThemeToggle />
+            <a
+              href="mailto:hia03labs@gmail.com"
+              className="inline-flex items-center rounded-full border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-ink transition-colors hover:bg-gray-50 dark:border-white/10 dark:hover:bg-gray-100"
+            >
+              Get in touch
+            </a>
+          </div>
         </nav>
       </header>
 
       <main>
-        {/* Hero */}
+        {/* 00 — Hero */}
         <section className="px-6 pb-24 pt-40 sm:pb-32 sm:pt-48">
-          <div className="mx-auto grid max-w-6xl gap-16 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-            <Reveal>
+          <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
+            <Reveal className="flex flex-col items-center">
               <span className="font-mono text-xs uppercase tracking-[0.25em] text-teal-600 dark:text-teal-400">
-                A03 / Software Studio
+                00 — A03 / Software Studio
               </span>
 
-              <h1 className="mt-5 text-balance font-display text-5xl font-semibold tracking-tight text-gray-900 sm:text-6xl dark:text-white">
-                We plan in blueprints.
-                <br />
-                We ship in production.
+              <h1 className="mt-5 text-balance font-display text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl dark:text-white">
+                Software, engineered <br />
+                not improvised.
               </h1>
 
               <p className="mt-6 max-w-lg text-pretty text-lg leading-relaxed text-gray-600 dark:text-gray-400">
-                A03 Labs designs, architects, and builds software for startups
-                that can&rsquo;t afford to guess twice — from first sketch to
-                the systems running in front of real users.
+                We&rsquo;re a software studio that treats architecture as
+                seriously as code. Discovery, design, and a real plan before
+                a single sprint starts.
               </p>
 
-              <div className="mt-10 flex flex-wrap items-center gap-4">
+              <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
                 <a
                   href="mailto:hia03labs@gmail.com"
                   className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-6 py-3 text-sm font-medium text-ink transition-colors hover:bg-gray-50 dark:border-white/10 dark:hover:bg-gray-100"
@@ -160,12 +208,17 @@ export function Landing() {
                     />
                   </svg>
                 </a>
-                <a
-                  href="#process"
+                <button
+                  type="button"
+                  onClick={() =>
+                    document
+                      .getElementById("why")
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
                   className="inline-flex items-center rounded-full border border-gray-200 px-6 py-3 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50 dark:border-white/10 dark:text-gray-300 dark:hover:bg-white/5"
                 >
-                  See how we work
-                </a>
+                  Why A03 Labs
+                </button>
               </div>
 
               <div className="mt-12 flex items-center gap-2 font-mono text-xs text-gray-500 dark:text-gray-500">
@@ -177,9 +230,9 @@ export function Landing() {
               </div>
             </Reveal>
 
-            <Reveal
+            {/* <Reveal
               delay={150}
-              className="relative mx-auto w-full max-w-sm overflow-hidden rounded-2xl border border-white/10 bg-ink"
+              className="relative mx-auto mt-16 w-full max-w-md overflow-hidden rounded-2xl border border-white/10 bg-ink text-left"
             >
               <CornerMarks />
               <div className="flex items-center gap-1.5 border-b border-white/10 px-5 py-3">
@@ -216,17 +269,70 @@ export function Landing() {
                   <span className="ml-1 inline-block h-4 w-2 -translate-y-0.5 animate-pulse bg-teal-400 align-middle" />
                 </p>
               </div>
-            </Reveal>
+            </Reveal> */}
           </div>
         </section>
 
-        {/* Capabilities */}
+        <Bridge>// so what&rsquo;s actually different</Bridge>
+
+        {/* 01 — Why A03 Labs */}
+        <section id="why" className="px-6 py-24 sm:py-32">
+          <div className="mx-auto max-w-6xl">
+            <Reveal className="flex flex-wrap items-end justify-between gap-6">
+              <div>
+                <span className="font-mono text-xs uppercase tracking-[0.25em] text-teal-600 dark:text-teal-400">
+                  01 — Why A03 Labs
+                </span>
+                <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl dark:text-white">
+                  Fewer meetings. More shipped code.
+                </h2>
+              </div>
+              <p className="max-w-sm text-pretty text-gray-600 sm:text-right dark:text-gray-400">
+                Most software agencies sell process theater. Here&rsquo;s what
+                changes when you work with us.
+              </p>
+            </Reveal>
+
+            <div className="relative mt-12 overflow-hidden rounded-2xl border border-white/10 bg-ink px-6 py-8 sm:px-10 sm:py-10">
+              <CornerMarks />
+              <div className="divide-y divide-white/10 font-mono text-xs sm:text-sm">
+                {reasons.map((reason, index) => (
+                  <Reveal
+                    key={reason.label}
+                    delay={index * 100}
+                    className="grid gap-2.5 py-6 first:pt-0 last:pb-0"
+                  >
+                    <span className="text-white/30">// {reason.label}</span>
+                    <p className="flex gap-3 text-white/40">
+                      <span aria-hidden="true" className="select-none">
+                        -
+                      </span>
+                      <span className="line-through decoration-white/20">
+                        {reason.typical}
+                      </span>
+                    </p>
+                    <p className="flex gap-3 text-teal-400">
+                      <span aria-hidden="true" className="select-none">
+                        +
+                      </span>
+                      <span className="text-white">{reason.a03}</span>
+                    </p>
+                  </Reveal>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <Bridge>// here&rsquo;s where it shows up</Bridge>
+
+        {/* 02 — Capabilities */}
         <section id="capabilities" className="px-6 py-24 sm:py-32">
           <div className="mx-auto max-w-6xl">
             <Reveal className="flex flex-wrap items-end justify-between gap-6 border-b border-gray-200 pb-8 dark:border-white/10">
               <div>
                 <span className="font-mono text-xs uppercase tracking-[0.25em] text-teal-600 dark:text-teal-400">
-                  Capabilities
+                  02 — Capabilities
                 </span>
                 <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl dark:text-white">
                   What we build and run
@@ -260,13 +366,15 @@ export function Landing() {
           </div>
         </section>
 
-        {/* Process */}
+        <Bridge>// and how we get there</Bridge>
+
+        {/* 03 — Process */}
         <section id="process" className="px-6 py-24 sm:py-32">
           <div className="mx-auto max-w-6xl">
             <Reveal className="flex flex-wrap items-end justify-between gap-6">
               <div>
                 <span className="font-mono text-xs uppercase tracking-[0.25em] text-teal-600 dark:text-teal-400">
-                  Process
+                  03 — Process
                 </span>
                 <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl dark:text-white">
                   From brief to shipped, no surprises
@@ -307,15 +415,17 @@ export function Landing() {
           </div>
         </section>
 
-        {/* Projects */}
+        <Bridge>// proof, not promises</Bridge>
+
+        {/* 04 — Selected work */}
         <section className="px-6 py-24 sm:py-32">
           <div className="mx-auto max-w-6xl">
             <Reveal className="max-w-2xl">
               <span className="font-mono text-xs uppercase tracking-[0.25em] text-teal-600 dark:text-teal-400">
-                Selected work
+                04 — Selected work
               </span>
               <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl dark:text-white">
-                Products we&rsquo;ve shipped
+                Projects we&rsquo;ve shipped
               </h2>
             </Reveal>
 
@@ -323,16 +433,17 @@ export function Landing() {
               {projects.map((project, index) => (
                 <Reveal key={project.name} delay={index * 120}>
                   <a
-                    href="#"
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="group block overflow-hidden rounded-2xl border border-gray-100 transition-colors hover:border-gray-200 dark:border-white/10 dark:hover:border-white/20"
                   >
-                    <div className="relative flex h-48 items-center justify-center overflow-hidden bg-ink">
+                    <div className="relative h-72 overflow-hidden bg-ink">
                       <CornerMarks />
                       <img
-                        src="/images/IMG_8060.png"
-                        alt=""
-                        aria-hidden="true"
-                        className="relative h-14 w-auto opacity-30 invert transition-transform group-hover:scale-105"
+                        src={project.image}
+                        alt={project.name}
+                        className="h-full w-full object-cover transition-transform group-hover:scale-105"
                       />
                     </div>
                     <div className="p-6">
@@ -370,7 +481,9 @@ export function Landing() {
           </div>
         </section>
 
-        {/* CTA */}
+        <Bridge>// your turn</Bridge>
+
+        {/* 05 — CTA */}
         <section className="px-6 py-24 sm:py-32">
           <div className="relative mx-auto max-w-3xl overflow-hidden rounded-2xl border border-white/10 bg-ink px-8 py-12 sm:px-12 sm:py-16">
             <CornerMarks />
@@ -381,7 +494,7 @@ export function Landing() {
 
             <Reveal className="relative">
               <span className="font-mono text-xs uppercase tracking-[0.25em] text-teal-400">
-                // Get in touch
+                05 — Get in touch
               </span>
               <h2 className="mt-4 text-balance font-display text-4xl font-semibold tracking-tight text-white sm:text-5xl">
                 Have an idea?
@@ -407,7 +520,7 @@ export function Landing() {
                   href="mailto:hia03labs@gmail.com"
                   className="inline-flex items-center justify-center gap-2 rounded-full border border-gray-200 bg-white px-6 py-3 text-sm font-medium text-ink transition-colors hover:bg-gray-50 sm:justify-start dark:border-white/10 dark:hover:bg-gray-100"
                 >
-                  Contact us
+                  Get in Touch
                 </a>
               </div>
             </Reveal>
