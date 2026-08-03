@@ -1,17 +1,17 @@
 import type { Route } from "./+types/home";
-import { ComingSoon } from "../coming-soon/coming-soon";
+import { Landing } from "../landing/landing";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "A03 Labs — Coming Soon" },
+    { title: "A03 Labs — Software Agency" },
     {
       name: "description",
       content:
-        "We're currently building our website. Something new is on the way.",
+        "A03 Labs designs, builds, and ships digital products for startups and growing teams.",
     },
   ];
 }
 
 export default function Home() {
-  return <ComingSoon />;
+  return <Landing />;
 }
