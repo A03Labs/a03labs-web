@@ -1,29 +1,6 @@
 import { Reveal } from "./reveal";
 import { ThemeToggle } from "./theme-toggle";
 
-function CornerMarks() {
-  return (
-    <>
-      <span
-        aria-hidden="true"
-        className="absolute left-3 top-3 h-3 w-3 border-l border-t border-teal-400/40"
-      />
-      <span
-        aria-hidden="true"
-        className="absolute right-3 top-3 h-3 w-3 border-r border-t border-teal-400/40"
-      />
-      <span
-        aria-hidden="true"
-        className="absolute bottom-3 left-3 h-3 w-3 border-b border-l border-teal-400/40"
-      />
-      <span
-        aria-hidden="true"
-        className="absolute bottom-3 right-3 h-3 w-3 border-b border-r border-teal-400/40"
-      />
-    </>
-  );
-}
-
 function Bridge({ children }: { children: React.ReactNode }) {
   return (
     <Reveal className="mx-auto flex max-w-6xl items-center gap-4 px-6">
@@ -144,7 +121,7 @@ export function Landing() {
     <div className="bg-paper dark:bg-ink">
       {/* Header */}
       <header className="fixed inset-x-4 top-4 z-20 sm:inset-x-6">
-        <nav className="mx-auto flex max-w-6xl items-center justify-between gap-2 rounded-full border border-gray-100 bg-paper/90 px-3 py-2 shadow-lg shadow-black/5 backdrop-blur-sm sm:px-6 sm:py-3 dark:border-white/10 dark:bg-ink/90">
+        <nav className="mx-auto flex max-w-6xl items-center justify-between gap-2 rounded-full bg-paper/90 px-3 py-2 shadow-lg shadow-black/5 backdrop-blur-sm sm:px-6 sm:py-3 dark:bg-ink/90">
           <a href="/" className="flex min-w-0 items-center gap-2">
             <img
               src="/images/IMG_8060.png"
@@ -159,7 +136,7 @@ export function Landing() {
             <ThemeToggle />
             <a
               href="mailto:hia03labs@gmail.com"
-              className="inline-flex items-center whitespace-nowrap rounded-full border border-gray-200 bg-white px-3 py-1.5 text-xs font-medium text-ink transition-colors hover:bg-gray-50 sm:px-4 sm:py-2 sm:text-sm dark:border-white/10 dark:hover:bg-gray-100"
+              className="inline-flex items-center whitespace-nowrap rounded-full bg-teal-600 px-3 py-1.5 text-xs font-medium text-white transition-colors hover:bg-teal-500 sm:px-4 sm:py-2 sm:text-sm"
             >
               Get in touch
             </a>
@@ -190,7 +167,7 @@ export function Landing() {
               <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
                 <a
                   href="mailto:hia03labs@gmail.com"
-                  className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-6 py-3 text-sm font-medium text-ink transition-colors hover:bg-gray-50 dark:border-white/10 dark:hover:bg-gray-100"
+                  className="inline-flex items-center gap-2 rounded-full bg-teal-600 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-teal-500"
                 >
                   Start a project
                   <svg
@@ -215,7 +192,7 @@ export function Landing() {
                       .getElementById("why")
                       ?.scrollIntoView({ behavior: "smooth" })
                   }
-                  className="inline-flex items-center rounded-full border border-gray-200 px-6 py-3 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50 dark:border-white/10 dark:text-gray-300 dark:hover:bg-white/5"
+                  className="inline-flex items-center rounded-full px-6 py-3 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-white/5"
                 >
                   Why A03 Labs
                 </button>
@@ -229,111 +206,65 @@ export function Landing() {
                 Now taking on new projects
               </div>
             </Reveal>
-
-            {/* <Reveal
-              delay={150}
-              className="relative mx-auto mt-16 w-full max-w-md overflow-hidden rounded-2xl border border-white/10 bg-ink text-left"
-            >
-              <CornerMarks />
-              <div className="flex items-center gap-1.5 border-b border-white/10 px-5 py-3">
-                <span className="h-2.5 w-2.5 rounded-full bg-white/15" />
-                <span className="h-2.5 w-2.5 rounded-full bg-white/15" />
-                <span className="h-2.5 w-2.5 rounded-full bg-white/15" />
-                <span className="ml-2 font-mono text-[11px] text-white/40">
-                  a03 — build log
-                </span>
-              </div>
-              <div className="space-y-2.5 p-6 font-mono text-xs sm:text-sm">
-                <p className="text-white/40">$ a03 ship --client</p>
-                {process.slice(0, -1).map((step) => (
-                  <p
-                    key={step.title}
-                    className="flex items-center justify-between text-white/50"
-                  >
-                    <span>{step.title}</span>
-                    <span className="text-teal-400">done</span>
-                  </p>
-                ))}
-                <p className="flex items-center justify-between text-white/50">
-                  <span>{process[process.length - 1].title}</span>
-                  <span className="flex items-center gap-1.5 text-teal-400">
-                    <span className="relative flex h-1.5 w-1.5">
-                      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-teal-400 opacity-75" />
-                      <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-teal-400" />
-                    </span>
-                    ongoing
-                  </span>
-                </p>
-                <p className="pt-2 text-white">
-                  shipped
-                  <span className="ml-1 inline-block h-4 w-2 -translate-y-0.5 animate-pulse bg-teal-400 align-middle" />
-                </p>
-              </div>
-            </Reveal> */}
           </div>
         </section>
 
-        <Bridge>// so what&rsquo;s actually different</Bridge>
+        {/* <Bridge>// so what&rsquo;s actually different</Bridge> */}
 
         {/* 01 — Why A03 Labs */}
-        <section id="why" className="px-6 py-24 sm:py-32">
+        <section id="why" className="bg-teal-600 px-6 py-24 sm:py-32 dark:bg-teal-900">
           <div className="mx-auto max-w-6xl">
             <Reveal className="flex flex-wrap items-end justify-between gap-6">
               <div>
-                <span className="font-mono text-xs uppercase tracking-[0.25em] text-teal-600 dark:text-teal-400">
+                <span className="font-mono text-xs uppercase tracking-[0.25em] text-teal-100">
                   01 — Why A03 Labs
                 </span>
-                <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl dark:text-white">
+                <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight text-white sm:text-4xl">
                   Fewer meetings. More shipped code.
                 </h2>
               </div>
-              <p className="max-w-sm text-pretty text-gray-600 sm:text-right dark:text-gray-400">
+              <p className="max-w-sm text-pretty text-teal-50/80 sm:text-right">
                 Most software agencies sell process theater. Here&rsquo;s what
                 changes when you work with us.
               </p>
             </Reveal>
 
-            <div className="relative mt-12 overflow-hidden rounded-2xl border border-gray-100 bg-white px-6 py-8 sm:px-10 sm:py-10 dark:border-white/10 dark:bg-ink">
-              <CornerMarks />
-              <div className="divide-y divide-gray-100 font-mono text-xs sm:text-sm dark:divide-white/10">
-                {reasons.map((reason, index) => (
-                  <Reveal
-                    key={reason.label}
-                    delay={index * 100}
-                    className="grid gap-2.5 py-6 first:pt-0 last:pb-0"
-                  >
-                    <span className="text-gray-400 dark:text-white/30">
-                      // {reason.label}
+            <div className="mt-12 divide-y divide-white/15 font-mono text-xs sm:text-sm">
+              {reasons.map((reason, index) => (
+                <Reveal
+                  key={reason.label}
+                  delay={index * 100}
+                  className="grid gap-2.5 py-6 first:pt-0 last:pb-0"
+                >
+                  <span className="text-teal-200/70">
+                    // {reason.label}
+                  </span>
+                  <p className="flex gap-3 text-teal-50/50">
+                    <span aria-hidden="true" className="select-none">
+                      -
                     </span>
-                    <p className="flex gap-3 text-gray-400 dark:text-white/40">
-                      <span aria-hidden="true" className="select-none">
-                        -
-                      </span>
-                      <span className="line-through decoration-gray-300 dark:decoration-white/20">
-                        {reason.typical}
-                      </span>
-                    </p>
-                    <p className="flex gap-3 text-teal-600 dark:text-teal-400">
-                      <span aria-hidden="true" className="select-none">
-                        +
-                      </span>
-                      <span className="text-gray-900 dark:text-white">
-                        {reason.a03}
-                      </span>
-                    </p>
-                  </Reveal>
-                ))}
-              </div>
+                    <span className="line-through decoration-teal-100/30">
+                      {reason.typical}
+                    </span>
+                  </p>
+                  <p className="flex gap-3 text-teal-200">
+                    <span aria-hidden="true" className="select-none">
+                      +
+                    </span>
+                    <span className="text-white">{reason.a03}</span>
+                  </p>
+                </Reveal>
+              ))}
             </div>
           </div>
         </section>
 
-        <Bridge>// here&rsquo;s where it shows up</Bridge>
+        {/* <Bridge>// here&rsquo;s where it shows up</Bridge> */}
 
         {/* 02 — Capabilities */}
         <section id="capabilities" className="px-6 py-24 sm:py-32">
           <div className="mx-auto max-w-6xl">
-            <Reveal className="flex flex-wrap items-end justify-between gap-6 border-b border-gray-200 pb-8 dark:border-white/10">
+            <Reveal className="flex flex-wrap items-end justify-between gap-6 pb-8">
               <div>
                 <span className="font-mono text-xs uppercase tracking-[0.25em] text-teal-600 dark:text-teal-400">
                   02 — Capabilities
@@ -348,29 +279,54 @@ export function Landing() {
               </p>
             </Reveal>
 
-            <div className="divide-y divide-gray-200 dark:divide-white/10">
-              {capabilities.map((capability, index) => (
-                <Reveal
-                  key={capability.name}
-                  delay={index * 80}
-                  className="flex flex-col gap-2 py-8 sm:flex-row sm:items-baseline sm:gap-8"
-                >
-                  <span className="font-mono text-sm text-teal-600 sm:w-10 sm:shrink-0 dark:text-teal-400">
-                    {capability.index}
-                  </span>
-                  <h3 className="text-lg font-semibold text-gray-900 sm:w-64 sm:shrink-0 dark:text-white">
-                    {capability.name}
-                  </h3>
-                  <p className="text-gray-600 sm:max-w-xl dark:text-gray-400">
-                    {capability.description}
-                  </p>
-                </Reveal>
-              ))}
+            <div className="flex flex-col">
+              {capabilities.map((capability, index) => {
+                const isLast = index === capabilities.length - 1;
+                return (
+                  <Reveal
+                    key={capability.name}
+                    delay={index * 80}
+                    className={
+                      isLast
+                        ? "mt-4 flex flex-col gap-2 rounded-2xl bg-teal-600 px-6 py-8 sm:mt-6 sm:flex-row sm:items-baseline sm:gap-8 sm:px-8 dark:bg-teal-900"
+                        : `flex flex-col gap-2 py-8 sm:flex-row sm:items-baseline sm:gap-8 ${index > 0 ? "border-t border-gray-200 dark:border-white/10" : ""}`
+                    }
+                  >
+                    <span
+                      className={
+                        isLast
+                          ? "font-mono text-sm text-teal-100 sm:w-10 sm:shrink-0"
+                          : "font-mono text-sm text-teal-600 sm:w-10 sm:shrink-0 dark:text-teal-400"
+                      }
+                    >
+                      {capability.index}
+                    </span>
+                    <h3
+                      className={
+                        isLast
+                          ? "text-lg font-semibold text-white sm:w-64 sm:shrink-0"
+                          : "text-lg font-semibold text-gray-900 sm:w-64 sm:shrink-0 dark:text-white"
+                      }
+                    >
+                      {capability.name}
+                    </h3>
+                    <p
+                      className={
+                        isLast
+                          ? "text-teal-50/80 sm:max-w-xl"
+                          : "text-gray-600 sm:max-w-xl dark:text-gray-400"
+                      }
+                    >
+                      {capability.description}
+                    </p>
+                  </Reveal>
+                );
+              })}
             </div>
           </div>
         </section>
 
-        <Bridge>// and how we get there</Bridge>
+        {/* <Bridge>// and how we get there</Bridge> */}
 
         {/* 03 — Process */}
         <section id="process" className="px-6 py-24 sm:py-32">
@@ -390,8 +346,7 @@ export function Landing() {
               </p>
             </Reveal>
 
-            <div className="relative mt-12 overflow-hidden rounded-2xl border border-gray-100 bg-white px-8 py-12 sm:px-12 dark:border-white/10 dark:bg-ink">
-              <CornerMarks />
+            <div className="relative mt-12 overflow-hidden rounded-3xl bg-black/5 px-8 py-12 sm:px-12 dark:bg-white/5">
               <ol className="relative">
                 <div
                   aria-hidden="true"
@@ -399,8 +354,11 @@ export function Landing() {
                 />
                 {process.map((item, index) => (
                   <li key={item.title} className="relative pb-12 last:pb-0">
-                    <Reveal delay={index * 100} className="flex gap-6">
-                      <span className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-teal-500/30 bg-white font-mono text-sm text-teal-600 dark:bg-ink dark:text-teal-400">
+                    <Reveal
+                      delay={index * 100}
+                      className="group -mx-4 flex gap-6 rounded-2xl px-4 py-3 transition-colors duration-300 hover:bg-teal-500/10 dark:hover:bg-teal-400/10"
+                    >
+                      <span className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-teal-500/30 bg-white font-mono text-sm text-teal-600 transition-colors duration-300 group-hover:border-teal-600 group-hover:bg-teal-600 group-hover:text-white dark:bg-ink dark:text-teal-400">
                         {String(index + 1).padStart(2, "0")}
                       </span>
                       <div className="pt-1.5">
@@ -419,7 +377,7 @@ export function Landing() {
           </div>
         </section>
 
-        <Bridge>// proof, not promises</Bridge>
+        {/* <Bridge>// proof, not promises</Bridge> */}
 
         {/* 04 — Selected work */}
         <section className="px-6 py-24 sm:py-32">
@@ -440,10 +398,9 @@ export function Landing() {
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group block overflow-hidden rounded-2xl border border-gray-100 transition-colors hover:border-gray-200 dark:border-white/10 dark:hover:border-white/20"
+                    className="group block overflow-hidden rounded-2xl shadow-md transition-shadow hover:shadow-xl hover:shadow-black/5 dark:hover:shadow-black/20"
                   >
                     <div className="relative h-72 overflow-hidden bg-ink">
-                      <CornerMarks />
                       <img
                         src={project.image}
                         alt={project.name}
@@ -485,44 +442,43 @@ export function Landing() {
           </div>
         </section>
 
-        <Bridge>// your turn</Bridge>
+        {/* <Bridge>// your turn</Bridge> */}
 
         {/* 05 — CTA */}
         <section className="px-6 py-24 sm:py-32">
-          <div className="relative mx-auto max-w-3xl overflow-hidden rounded-2xl border border-gray-100 bg-white px-8 py-12 sm:px-12 sm:py-16 dark:border-white/10 dark:bg-ink">
-            <CornerMarks />
+          <div className="relative mx-auto max-w-3xl overflow-hidden rounded-3xl bg-ink px-8 py-12 sm:px-12 sm:py-16 dark:bg-white">
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:56px_56px] dark:bg-[linear-gradient(to_right,rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.025)_1px,transparent_1px)]"
+              className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.18)_1px,transparent_0)] bg-[size:28px_28px] dark:bg-[radial-gradient(circle_at_1px_1px,rgba(0,0,0,0.08)_1px,transparent_0)]"
             />
 
             <Reveal className="relative">
-              <span className="font-mono text-xs uppercase tracking-[0.25em] text-teal-600 dark:text-teal-400">
+              <span className="font-mono text-xs uppercase tracking-[0.25em] text-teal-400 dark:text-teal-600">
                 05 — Get in touch
               </span>
-              <h2 className="mt-4 text-balance font-display text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl dark:text-white">
+              <h2 className="mt-4 text-balance font-display text-4xl font-semibold tracking-tight text-white sm:text-5xl dark:text-gray-900">
                 Have an idea?
                 <br />
                 Feel free to reach out.
               </h2>
 
-              <div className="mt-10 flex flex-col items-stretch gap-4 rounded-3xl border border-gray-100 bg-gray-50 p-4 sm:flex-row sm:items-center sm:justify-between sm:rounded-full sm:p-2 sm:pl-4 dark:border-white/10 dark:bg-white/5">
+              <div className="mt-10 flex flex-col items-stretch gap-4 rounded-3xl bg-white/10 p-4 sm:flex-row sm:items-center sm:justify-between sm:rounded-full sm:p-2 sm:pl-4 dark:bg-black/5">
                 <div className="flex items-center gap-3">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gray-100 dark:bg-white/10">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/15 dark:bg-black/10">
                     <img
                       src="/images/IMG_8060.png"
                       alt=""
                       aria-hidden="true"
-                      className="h-5 w-auto dark:invert"
+                      className="h-5 w-auto invert dark:invert-0"
                     />
                   </span>
-                  <span className="text-sm font-medium text-gray-900 sm:text-base dark:text-white">
+                  <span className="text-sm font-medium text-white sm:text-base dark:text-gray-900">
                     Turn ideas into shipped software
                   </span>
                 </div>
                 <a
                   href="mailto:hia03labs@gmail.com"
-                  className="inline-flex items-center justify-center gap-2 rounded-full border border-gray-200 bg-white px-6 py-3 text-sm font-medium text-ink transition-colors hover:bg-gray-50 sm:justify-start dark:border-white/10 dark:hover:bg-gray-100"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-teal-600 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-teal-500 sm:justify-start"
                 >
                   Get in Touch
                 </a>
