@@ -150,7 +150,7 @@ export function Landing() {
           <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
             <Reveal className="flex flex-col items-center">
               <span className="font-mono text-xs uppercase tracking-[0.25em] text-teal-600 dark:text-teal-400">
-                00 — A03 / Software Studio
+                00 — A03 / Software & Product Studio
               </span>
 
               <h1 className="mt-5 text-balance font-display text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl dark:text-white">
@@ -159,7 +159,7 @@ export function Landing() {
               </h1>
 
               <p className="mt-6 max-w-lg text-pretty text-lg leading-relaxed text-gray-600 dark:text-gray-400">
-                We&rsquo;re a software studio that treats architecture as
+                We&rsquo;re a software and product studio that treats architecture as
                 seriously as code. Discovery, design, and a real plan before
                 a single sprint starts.
               </p>
