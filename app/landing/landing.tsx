@@ -1,5 +1,7 @@
+import { Link } from "react-router";
 import { Reveal } from "./reveal";
-import { ThemeToggle } from "./theme-toggle";
+import { SiteFooter } from "../components/site-footer";
+import { SiteHeader } from "../components/site-header";
 
 function Bridge({ children }: { children: React.ReactNode }) {
   return (
@@ -119,30 +121,7 @@ const projects = [
 export function Landing() {
   return (
     <div className="bg-paper dark:bg-ink">
-      {/* Header */}
-      <header className="fixed inset-x-4 top-4 z-20 sm:inset-x-6">
-        <nav className="mx-auto flex max-w-6xl items-center justify-between gap-2 rounded-full bg-paper/90 px-3 py-2 shadow-lg shadow-black/5 backdrop-blur-sm sm:px-6 sm:py-3 dark:bg-ink/90">
-          <a href="/" className="flex min-w-0 items-center gap-2">
-            <img
-              src="/images/IMG_8060.png"
-              alt="A03 Labs"
-              className="h-6 w-auto shrink-0 dark:invert sm:h-8"
-            />
-            <span className="whitespace-nowrap font-mono text-xs font-medium tracking-[0.2em] text-gray-900 uppercase sm:text-sm dark:text-white">
-              A03 Labs
-            </span>
-          </a>
-          <div className="flex shrink-0 items-center gap-2 sm:gap-3">
-            <ThemeToggle />
-            <a
-              href="mailto:hia03labs@gmail.com"
-              className="inline-flex items-center whitespace-nowrap rounded-full bg-teal-600 px-3 py-1.5 text-xs font-medium text-white transition-colors hover:bg-teal-500 sm:px-4 sm:py-2 sm:text-sm"
-            >
-              Get in touch
-            </a>
-          </div>
-        </nav>
-      </header>
+      <SiteHeader />
 
       <main>
         {/* 00 — Hero */}
@@ -165,8 +144,8 @@ export function Landing() {
               </p>
 
               <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-                <a
-                  href="mailto:hia03labs@gmail.com"
+                <Link
+                  to="/contact"
                   className="inline-flex items-center gap-2 rounded-full bg-teal-600 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-teal-500"
                 >
                   Start a project
@@ -184,7 +163,7 @@ export function Landing() {
                       d="M13.5 4.5 21 12l-7.5 7.5M21 12H3"
                     />
                   </svg>
-                </a>
+                </Link>
                 <button
                   type="button"
                   onClick={() =>
@@ -476,21 +455,19 @@ export function Landing() {
                     Turn ideas into shipped software
                   </span>
                 </div>
-                <a
-                  href="mailto:hia03labs@gmail.com"
+                <Link
+                  to="/contact"
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-teal-600 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-teal-500 sm:justify-start"
                 >
                   Get in Touch
-                </a>
+                </Link>
               </div>
             </Reveal>
           </div>
         </section>
       </main>
 
-      <footer className="px-6 py-8 text-center font-mono text-xs text-gray-400 dark:text-gray-600">
-        &copy; {new Date().getFullYear()} A03 Labs. All rights reserved.
-      </footer>
+      <SiteFooter />
     </div>
   );
 }
