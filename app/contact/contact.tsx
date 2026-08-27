@@ -1,7 +1,8 @@
-import { Form, useNavigation } from "react-router";
+import { useState } from "react";
 import { Reveal } from "../landing/reveal";
 import { SiteHeader } from "../components/site-header";
 import { SiteFooter } from "../components/site-footer";
+import { sendEnquiry, validateEnquiry, type Enquiry } from "./send-enquiry";
 import {
   CONTACT_EMAIL,
   PHONE_DISPLAY,
@@ -17,14 +18,6 @@ const projectTypes = [
   "Not sure yet",
 ];
 
-
-export type ContactActionData =
-  | {
-      ok: boolean;
-      errors: Record<string, string> | null;
-      values: Record<string, string> | null;
-    }
-  | undefined;
 
 function WhatsAppIcon({ className }: { className?: string }) {
   return (
@@ -68,13 +61,64 @@ function SuccessPanel() {
   );
 }
 
-export function Contact({ actionData }: { actionData?: ContactActionData }) {
-  const navigation = useNavigation();
-  const submitting = navigation.state === "submitting";
+function readField(formData: FormData, name: string) {
+  const value = formData.get(name);
+  return typeof value === "string" ? value.trim() : "";
+}
 
-  const errors = actionData?.errors ?? null;
-  const previous = actionData?.values ?? null;
-  const succeeded = actionData?.ok === true;
+export function Contact() {
+  const [errors, setErrors] = useState<Record<string, string> | null>(null);
+  const [status, setStatus] = useState<"idle" | "sending" | "sent">("idle");
+
+  const submitting = status === "sending";
+  const succeeded = status === "sent";
+
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    // Grab the form before awaiting — React clears `currentTarget` after the
+    // event handler returns, and the inputs keep their own values anyway.
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    // Bots fill in every field they find; humans never see this one.
+    if (readField(formData, "website")) {
+      setErrors(null);
+      setStatus("sent");
+      return;
+    }
+
+    const values: Enquiry = {
+      name: readField(formData, "name"),
+      email: readField(formData, "email"),
+      company: readField(formData, "company"),
+      projectType: readField(formData, "projectType"),
+      budget: readField(formData, "budget"),
+      message: readField(formData, "message"),
+    };
+
+    const fieldErrors = validateEnquiry(values);
+    if (fieldErrors) {
+      setErrors(fieldErrors);
+      return;
+    }
+
+    setErrors(null);
+    setStatus("sending");
+
+    try {
+      await sendEnquiry(values);
+    } catch (error) {
+      console.error("Contact form delivery failed", error);
+      setErrors({
+        form: "Something went wrong sending that. Please email us directly and we'll pick it up.",
+      });
+      setStatus("idle");
+      return;
+    }
+
+    setStatus("sent");
+  }
 
   const fieldClass =
     "w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 outline-none transition-colors placeholder:text-gray-400 focus:border-teal-600 dark:border-white/10 dark:bg-white/5 dark:text-white dark:placeholder:text-gray-600 dark:focus:border-teal-400";
@@ -140,7 +184,7 @@ export function Contact({ actionData }: { actionData?: ContactActionData }) {
                     Start the conversation
                   </h2>
 
-                  <Form method="post" className="mt-8 grid gap-6">
+                  <form onSubmit={handleSubmit} className="mt-8 grid gap-6">
                     {/* Honeypot — hidden from people, catnip for bots. */}
                     <input
                       type="text"
@@ -162,8 +206,7 @@ export function Contact({ actionData }: { actionData?: ContactActionData }) {
                           type="text"
                           required
                           autoComplete="name"
-                          defaultValue={previous?.name ?? ""}
-                          aria-invalid={Boolean(errors?.name)}
+                            aria-invalid={Boolean(errors?.name)}
                           placeholder="Ada Lovelace"
                           className={input("name")}
                         />
@@ -179,8 +222,7 @@ export function Contact({ actionData }: { actionData?: ContactActionData }) {
                           type="email"
                           required
                           autoComplete="email"
-                          defaultValue={previous?.email ?? ""}
-                          aria-invalid={Boolean(errors?.email)}
+                            aria-invalid={Boolean(errors?.email)}
                           placeholder="you@company.com"
                           className={input("email")}
                         />
@@ -197,7 +239,6 @@ export function Contact({ actionData }: { actionData?: ContactActionData }) {
                         name="company"
                         type="text"
                         autoComplete="organization"
-                        defaultValue={previous?.company ?? ""}
                         placeholder="Acme Inc."
                         className={fieldClass}
                       />
@@ -211,8 +252,7 @@ export function Contact({ actionData }: { actionData?: ContactActionData }) {
                         <select
                           id="projectType"
                           name="projectType"
-                          defaultValue={previous?.projectType ?? ""}
-                          className={fieldClass}
+                            className={fieldClass}
                         >
                           <option value="">Select one</option>
                           {projectTypes.map((type) => (
@@ -234,7 +274,6 @@ export function Contact({ actionData }: { actionData?: ContactActionData }) {
                         name="message"
                         required
                         rows={6}
-                        defaultValue={previous?.message ?? ""}
                         aria-invalid={Boolean(errors?.message)}
                         placeholder="What are you building, who is it for, and where are you stuck?"
                         className={`${input("message")} resize-y`}
@@ -279,7 +318,7 @@ export function Contact({ actionData }: { actionData?: ContactActionData }) {
                         Goes straight to our inbox.
                       </p>
                     </div>
-                  </Form>
+                  </form>
                 </div>
               )}
             </Reveal>

@@ -1,7 +1,5 @@
-import { data } from "react-router";
 import type { Route } from "./+types/contact";
 import { Contact } from "../contact/contact";
-import { sendEnquiry } from "../contact/send-enquiry.server";
 import { PHONE_E164 } from "../contact/contact-details";
 
 const SITE_URL = "https://a03labs.com";
@@ -70,69 +68,6 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
-const MAX_MESSAGE_LENGTH = 5000;
-
-function readField(formData: FormData, name: string) {
-  const value = formData.get(name);
-  return typeof value === "string" ? value.trim() : "";
-}
-
-export async function action({ request }: Route.ActionArgs) {
-  const formData = await request.formData();
-
-  const values = {
-    name: readField(formData, "name"),
-    email: readField(formData, "email"),
-    company: readField(formData, "company"),
-    projectType: readField(formData, "projectType"),
-    budget: readField(formData, "budget"),
-    message: readField(formData, "message"),
-  };
-
-  // Bots fill in every field they find; humans never see this one.
-  if (readField(formData, "website")) {
-    return { ok: true as const, errors: null, values: null };
-  }
-
-  const errors: Record<string, string> = {};
-
-  if (!values.name) {
-    errors.name = "Let us know who you are.";
-  }
-  if (!values.email) {
-    errors.email = "We need an email to reply to.";
-  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email)) {
-    errors.email = "That doesn't look like a valid email address.";
-  }
-  if (!values.message) {
-    errors.message = "Tell us a little about the project.";
-  } else if (values.message.length > MAX_MESSAGE_LENGTH) {
-    errors.message = `Please keep this under ${MAX_MESSAGE_LENGTH} characters.`;
-  }
-
-  if (Object.keys(errors).length > 0) {
-    return data({ ok: false as const, errors, values }, { status: 400 });
-  }
-
-  try {
-    await sendEnquiry(values);
-  } catch (error) {
-    console.error("Contact form delivery failed", error);
-    return data(
-      {
-        ok: false as const,
-        errors: {
-          form: "Something went wrong sending that. Please email us directly and we'll pick it up.",
-        },
-        values,
-      },
-      { status: 500 },
-    );
-  }
-
-  return { ok: true as const, errors: null, values: null };
-}
-
-export default function ContactRoute({ actionData }: Route.ComponentProps) {
-  return <Contact actionData={actionData} />;
+export default function ContactRoute() {
+  return <Contact />;
 }

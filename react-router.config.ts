@@ -1,13 +1,11 @@
 import type { Config } from "@react-router/dev/config";
 
 export default {
-  // Config options...
-  // Server rendered. The contact form posts to a server `action` that relays
-  // the enquiry to FormSubmit, so it needs a running server — SPA mode can't.
+  // Fully static — no server at runtime. The contact form posts straight from
+  // the browser to FormSubmit's AJAX endpoint, so nothing here needs a
+  // server `action`.
   ssr: false,
-  // The marketing page is static, so pre-render it at build time. /contact is
-  // deliberately left out: it is server-rendered on request (crawlers still
-  // get full HTML) and pre-rendering a route that owns a form action buys
-  // nothing.
-  prerender: ["/"],
+  // Pre-render every route at build time so each one ships real HTML for
+  // crawlers instead of an empty SPA shell.
+  prerender: ["/", "/contact"],
 } satisfies Config;
