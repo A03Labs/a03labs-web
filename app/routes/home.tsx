@@ -7,7 +7,7 @@ const DESCRIPTION =
   "A03 Labs is a software studio that designs, builds, and ships web and mobile products for startups and growing teams — discovery, architecture, and a real plan before a single sprint starts.";
 const OG_IMAGE = `${SITE_URL}/images/og-image.png`;
 
-export function meta({}: Route.MetaArgs) {
+export function meta({ }: Route.MetaArgs) {
   return [
     { title: TITLE },
     { name: "description", content: DESCRIPTION },
@@ -49,7 +49,7 @@ export function meta({}: Route.MetaArgs) {
         logo: `${SITE_URL}/images/IMG_8060.png`,
         image: OG_IMAGE,
         description: DESCRIPTION,
-        email: "hia03labs@gmail.com",
+        email: "hi.a03labs@gmail.com",
         priceRange: "$$",
         areaServed: "Worldwide",
         serviceType: [

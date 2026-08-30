@@ -5,7 +5,7 @@
 > as code — discovery, design, and a real plan before a single sprint starts.
 
 Website: https://a03labs.com
-Contact: hia03labs@gmail.com
+Contact: hi.a03labs@gmail.com
 Phone: +234 916 034 7158
 WhatsApp: https://wa.me/2349160347158
 Contact page: https://a03labs.com/contact
@@ -49,4 +49,4 @@ cycle instead of a status update once a sprint.
 ## Contact
 
 A03 Labs is currently taking on new projects. Reach out at
-hia03labs@gmail.com.
+hi.a03labs@gmail.com.

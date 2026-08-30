@@ -9,7 +9,7 @@ const DESCRIPTION =
   "Start a project with A03 Labs. Tell us what you're building and we'll reply within one business day with a plan — scope, architecture direction, and a cost range in writing.";
 const OG_IMAGE = `${SITE_URL}/images/og-image.png`;
 
-export function meta({}: Route.MetaArgs) {
+export function meta({ }: Route.MetaArgs) {
   return [
     { title: TITLE },
     { name: "description", content: DESCRIPTION },
@@ -51,13 +51,13 @@ export function meta({}: Route.MetaArgs) {
           "@type": "ProfessionalService",
           name: "A03 Labs",
           url: SITE_URL,
-          email: "hia03labs@gmail.com",
+          email: "hi.a03labs@gmail.com",
           telephone: `+${PHONE_E164}`,
           areaServed: "Worldwide",
           contactPoint: {
             "@type": "ContactPoint",
             contactType: "Sales",
-            email: "hia03labs@gmail.com",
+            email: "hi.a03labs@gmail.com",
             telephone: `+${PHONE_E164}`,
             contactOption: "TollFree",
             availableLanguage: "English",
