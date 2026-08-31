@@ -49,7 +49,7 @@ export function meta({ }: Route.MetaArgs) {
         logo: `${SITE_URL}/images/IMG_8060.png`,
         image: OG_IMAGE,
         description: DESCRIPTION,
-        email: "hi.a03labs@gmail.com",
+        email: "hello.a03labs.com",
         priceRange: "$$",
         areaServed: "Worldwide",
         serviceType: [

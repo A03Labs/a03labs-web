@@ -3,7 +3,7 @@
  * Shared by the contact page, the landing page, and the server-side action.
  */
 
-export const CONTACT_EMAIL = "hi.a03labs@gmail.com";
+export const CONTACT_EMAIL = "hello.a03labs.com";
 
 /** Digits only, with country code — the format tel: and schema.org expect. */
 export const PHONE_E164 = "2349160347158";
