@@ -45,6 +45,9 @@ cycle instead of a status update once a sprint.
   bookings.
 - **Lifematics Lifestyle** (https://lifematicswithdribisohart.com/) — Coaching
   platform bringing together courses, workshops, and content under one brand.
+- **Culangex** (https://www.culangex.com/) — Authentic language and culture
+  learning video game platform featuring immersive, story-driven educational
+  experiences.
 
 ## Contact
 

@@ -116,6 +116,14 @@ const projects = [
     link: "https://lifematicswithdribisohart.com/",
     image: "/images/projects/lifematics.png",
   },
+  {
+    name: "Culangex",
+    category: "EdTech · Video Game",
+    description:
+      "An authentic language and culture learning platform combining story-driven RPG gameplay with immersive education for global languages.",
+    link: "https://www.culangex.com/",
+    image: "/images/projects/culangex.png",
+  },
 ];
 
 export function Landing() {
