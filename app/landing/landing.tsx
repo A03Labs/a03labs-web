@@ -24,105 +24,105 @@ function Bridge({ children }: { children: React.ReactNode }) {
 const reasons = [
   {
     label: "Team",
-    typical: "Account manager relaying to outsourced contractors",
-    a03: "Direct access to the engineers building your product",
+    typical: "A middleman relaying messages to outsourced freelancers",
+    a03: "Direct access to the creators actually building your product",
   },
   {
     label: "Process",
-    typical: '"Agile" in name, chaos in practice',
-    a03: "A fixed sequence — discovery, architecture, build, launch, support",
+    typical: "Endless meetings, changing deadlines, and confusion",
+    a03: "A clear step-by-step plan — from first idea to launch and beyond",
   },
   {
-    label: "Cadence",
-    typical: "A status update once a sprint",
-    a03: "Working software and a live demo, every cycle",
+    label: "Updates",
+    typical: "Vague status emails every few weeks",
+    a03: "Working demos and live previews you can test at every stage",
   },
   {
     label: "After launch",
-    typical: "Invoice sent, phone stops ringing",
-    a03: "Monitoring, iteration, and a long-term partnership",
+    typical: "Invoice sent, and they disappear when you need help",
+    a03: "Reliable support, ongoing improvements, and a partner you can count on",
   },
 ];
 
 const capabilities = [
   {
     index: "01",
-    name: "Web & Product Development",
+    name: "Web & Mobile Apps",
     description:
-      "Full-stack web and mobile applications built for speed, scale, and maintainability.",
+      "Custom websites, web platforms, and mobile apps built to load fast, look great, and grow with your business.",
   },
   {
     index: "02",
-    name: "Product Design",
+    name: "Design & User Experience",
     description:
-      "User-centered UI/UX design that turns complex problems into simple, usable products.",
+      "Clean, intuitive designs that make your product effortless and enjoyable for your customers to use.",
   },
   {
     index: "03",
-    name: "Cloud & DevOps",
+    name: "Hosting & Maintenance",
     description:
-      "Infrastructure, CI/CD, and cloud architecture so your team ships with confidence.",
+      "Fast, secure hosting and systems setup so your website or app stays online, runs reliably, and never slows down.",
   },
   {
     index: "04",
-    name: "Technical Consulting",
+    name: "Strategy & Tech Guidance",
     description:
-      "Hands-on advisory for teams navigating architecture decisions and technical debt.",
+      "Honest, expert advice on choosing the right tools, planning new features, or fixing existing software that feels clunky.",
   },
 ];
 
 const process = [
   {
-    title: "Discovery",
+    title: "Discovery & Goals",
     description:
-      "We spend time understanding your business, your users, and the real problem — not just the feature list.",
+      "We start by getting to know your business, your customers, and what success looks like — making sure we build the right thing from day one.",
   },
   {
-    title: "Design & Architecture",
+    title: "Design & Planning",
     description:
-      "User flows, data models, and API contracts are defined upfront. We think before we build.",
+      "We map out every screen and how things connect before writing code, saving you time and avoiding costly re-dos.",
   },
   {
-    title: "Build",
+    title: "Development",
     description:
-      "Focused development cycles with regular demos and working software early — not just files and promises.",
+      "We build your product with clean, reliable code and share live previews along the way, so you can test features as they come to life.",
   },
   {
     title: "Launch",
     description:
-      "Full deployment, monitoring setup, and knowledge transfer. We don't disappear after go-live.",
+      "We thoroughly test everything, handle the full rollout, and show you exactly how to manage your new system.",
   },
   {
-    title: "Support",
+    title: "Support & Growth",
     description:
-      "Ongoing iteration and long-term engineering partnership. We're in it for the product's lifetime.",
+      "We stick by your side after launch to keep things running smoothly, make updates, and help your platform grow.",
   },
 ];
 
 const projects = [
   {
-    name: "Dr Ibiso Hart",
-    category: "Portfolio · Web App",
-    description:
-      "A personal brand site for a certified lifestyle coach, built to convert visitors into discovery-session bookings.",
-    link: "https://www.dribiso.com/",
-    image: "/images/projects/dr-ibiso.png",
-  },
-  {
     name: "Lifematics Lifestyle",
-    category: "Lifestyle · Web App",
+    category: "Online Coaching Platform",
     description:
-      "A coaching platform bringing together courses, workshops, and content under one brand for a growing personal-development business.",
+      "An all-in-one platform bringing together courses, workshops, and resources under one brand for a growing personal-development business.",
     link: "https://lifematicslifestyle.com/",
     image: "/images/projects/lifematics.png",
   },
   {
     name: "Culangex",
-    category: "EdTech · Video Game",
+    category: "Language Learning Game",
     description:
-      "An authentic language and culture learning platform combining story-driven RPG gameplay with immersive education for global languages.",
+      "An engaging learning platform combining interactive storytelling and game elements to teach world languages.",
     link: "https://www.culangex.com/",
     image: "/images/projects/culangex.png",
+  },
+  {
+    name: "Dr Ibiso Hart",
+    category: "Coaching & Booking Website",
+    description:
+      "A sleek personal brand website designed to introduce a certified lifestyle coach and make booking consultations seamless.",
+    link: "https://www.dribiso.com/",
+    image: "/images/projects/dr-ibiso.png",
   },
 ];
 
@@ -137,18 +137,18 @@ export function Landing() {
           <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
             <Reveal className="flex flex-col items-center">
               <span className="font-mono text-xs uppercase tracking-[0.25em] text-teal-600 dark:text-teal-400">
-                00 — A03 / Software & Product Studio
+                00 — A03 / Digital Product & Web Studio
               </span>
 
               <h1 className="mt-5 text-balance font-display text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl dark:text-white">
-                Software, engineered <br />
-                not improvised.
+                Websites and apps, <br />
+                built right from day one.
               </h1>
 
               <p className="mt-6 max-w-lg text-pretty text-lg leading-relaxed text-gray-600 dark:text-gray-400">
-                We&rsquo;re a software and product studio that treats architecture as
-                seriously as code. Discovery, design, and a real plan before
-                a single sprint starts.
+                We turn your ideas into fast, reliable websites and apps.
+                Thoughtful design, clear communication, and a solid plan before
+                we build — so you launch with confidence.
               </p>
 
               <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
@@ -207,12 +207,12 @@ export function Landing() {
                   01 — Why A03 Labs
                 </span>
                 <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-                  Fewer meetings. More shipped code.
+                  Less talk. Real results.
                 </h2>
               </div>
               <p className="max-w-sm text-pretty text-teal-50/80 sm:text-right">
-                Most software agencies sell process theater. Here&rsquo;s what
-                changes when you work with us.
+                Working with a studio shouldn&rsquo;t feel frustrating or confusing.
+                Here&rsquo;s what changes when you partner with us.
               </p>
             </Reveal>
 
@@ -254,15 +254,15 @@ export function Landing() {
             <Reveal className="flex flex-wrap items-end justify-between gap-6 pb-8">
               <div>
                 <span className="font-mono text-xs uppercase tracking-[0.25em] text-teal-600 dark:text-teal-400">
-                  02 — Capabilities
+                  02 — What we do
                 </span>
                 <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl dark:text-white">
-                  What we build and run
+                  Everything you need to launch and grow
                 </h2>
               </div>
               <p className="max-w-sm text-pretty text-gray-600 dark:text-gray-400">
-                End-to-end software services, from first sketch to
-                production.
+                Complete design and development services, taking your idea from
+                first sketch to a live, working product.
               </p>
             </Reveal>
 
@@ -321,15 +321,15 @@ export function Landing() {
             <Reveal className="flex flex-wrap items-end justify-between gap-6">
               <div>
                 <span className="font-mono text-xs uppercase tracking-[0.25em] text-teal-600 dark:text-teal-400">
-                  03 — Process
+                  03 — How we work
                 </span>
                 <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl dark:text-white">
-                  From brief to shipped, no surprises
+                  From idea to launch, without surprises
                 </h2>
               </div>
               <p className="max-w-sm text-pretty text-gray-600 sm:text-right dark:text-gray-400">
-                A clear, repeatable sequence that keeps projects on track and
-                clients in the loop.
+                A simple, transparent step-by-step approach so you always know
+                what&rsquo;s happening and what&rsquo;s next.
               </p>
             </Reveal>
 
@@ -374,7 +374,7 @@ export function Landing() {
                 04 — Selected work
               </span>
               <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl dark:text-white">
-                Projects we&rsquo;ve shipped
+                Projects we&rsquo;ve brought to life
               </h2>
             </Reveal>
 
@@ -444,9 +444,9 @@ export function Landing() {
                 05 — Get in touch
               </span>
               <h2 className="mt-4 text-balance font-display text-4xl font-semibold tracking-tight text-white sm:text-5xl dark:text-gray-900">
-                Have an idea?
+                Have an idea in mind?
                 <br />
-                Feel free to reach out.
+                Let&rsquo;s talk about it.
               </h2>
 
               <div className="mt-10 flex flex-col items-stretch gap-4 rounded-3xl bg-white/10 p-4 sm:flex-row sm:items-center sm:justify-between sm:rounded-full sm:p-2 sm:pl-4 dark:bg-black/5">
@@ -460,7 +460,7 @@ export function Landing() {
                     />
                   </span>
                   <span className="text-sm font-medium text-white sm:text-base dark:text-gray-900">
-                    Turn ideas into shipped software
+                    Turn ideas into real, working products
                   </span>
                 </div>
                 <Link

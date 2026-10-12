@@ -11,10 +11,10 @@ import {
 } from "./contact-details";
 
 const projectTypes = [
-  "Web & Product Development",
-  "Product Design",
-  "Cloud & DevOps",
-  "Technical Consulting",
+  "Web & Mobile Apps",
+  "Design & User Experience",
+  "Hosting & Maintenance",
+  "Tech Advice & Strategy",
   "Not sure yet",
 ];
 
@@ -34,11 +34,11 @@ function SuccessPanel() {
         01 — Message sent
       </span>
       <h2 className="mt-3 font-display text-2xl font-semibold tracking-tight text-gray-900 sm:text-3xl dark:text-white">
-        Thanks — it&rsquo;s in our inbox.
+        Thanks — we got your message!
       </h2>
       <p className="mt-4 max-w-md text-pretty leading-relaxed text-gray-600 dark:text-gray-400">
-        We read every enquiry ourselves and reply within one business day. If
-        it&rsquo;s urgent, WhatsApp is the fastest way to reach us.
+        We read every message personally and reply within one business day. If
+        you need a quicker response, WhatsApp is the fastest way to reach us.
       </p>
       <div className="mt-8 flex flex-wrap gap-3">
         <a
@@ -149,12 +149,12 @@ export function Contact() {
                 00 — Get in touch
               </span>
               <h1 className="mt-5 text-balance font-display text-5xl font-semibold tracking-tight text-gray-900 sm:text-6xl dark:text-white">
-                Tell us what you&rsquo;re building.
+                Tell us about your project.
               </h1>
               <p className="mt-6 max-w-lg text-pretty text-lg leading-relaxed text-gray-600 dark:text-gray-400">
-                Whether it&rsquo;s a rough idea or a spec that&rsquo;s already
-                been through three teams — send it over. We&rsquo;ll tell you
-                honestly whether we&rsquo;re the right studio for it.
+                Whether you&rsquo;re starting fresh with a new idea or need help
+                improving an existing product — send it over. We&rsquo;ll give
+                you honest feedback and help you figure out the best next steps.
               </p>
 
               <div className="mt-8 flex items-center gap-2 font-mono text-xs text-gray-500 dark:text-gray-500">
@@ -178,7 +178,7 @@ export function Contact() {
               ) : (
                 <div className="rounded-3xl bg-black/5 p-6 sm:p-10 dark:bg-white/5">
                   <span className="font-mono text-xs uppercase tracking-[0.25em] text-teal-600 dark:text-teal-400">
-                    01 — Project brief
+                    01 — Send a message
                   </span>
                   <h2 className="mt-3 font-display text-2xl font-semibold tracking-tight text-gray-900 sm:text-3xl dark:text-white">
                     Start the conversation
@@ -275,7 +275,7 @@ export function Contact() {
                         required
                         rows={6}
                         aria-invalid={Boolean(errors?.message)}
-                        placeholder="What are you building, who is it for, and where are you stuck?"
+                        placeholder="Tell us what you want to build, what you hope to achieve, or any questions you have..."
                         className={`${input("message")} resize-y`}
                       />
                       <FieldError field="message" />

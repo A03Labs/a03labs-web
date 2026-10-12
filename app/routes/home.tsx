@@ -2,9 +2,9 @@ import type { Route } from "./+types/home";
 import { Landing } from "../landing/landing";
 
 const SITE_URL = "https://a03labs.com";
-const TITLE = "A03 Labs — Software Studio for Web, Mobile & Product Engineering";
+const TITLE = "A03 Labs — Websites, Apps & Digital Product Studio";
 const DESCRIPTION =
-  "A03 Labs is a software studio that designs, builds, and ships web and mobile products for startups and growing teams — discovery, architecture, and a real plan before a single sprint starts.";
+  "A03 Labs designs and builds custom websites, mobile apps, and digital platforms for startups and businesses. Thoughtful design, clear communication, and dependable results.";
 const OG_IMAGE = `${SITE_URL}/images/og-image.png`;
 
 export function meta({ }: Route.MetaArgs) {
@@ -14,7 +14,7 @@ export function meta({ }: Route.MetaArgs) {
     {
       name: "keywords",
       content:
-        "software studio, software agency, web development, product development, product design, cloud and devops, technical consulting, A03 Labs",
+        "software studio, web design, mobile apps, web development, product design, website hosting, tech consulting, A03 Labs",
     },
     { name: "robots", content: "index, follow" },
     { name: "author", content: "A03 Labs" },
@@ -53,10 +53,10 @@ export function meta({ }: Route.MetaArgs) {
         priceRange: "$$",
         areaServed: "Worldwide",
         serviceType: [
-          "Web & Product Development",
-          "Product Design",
-          "Cloud & DevOps",
-          "Technical Consulting",
+          "Web & Mobile Apps",
+          "Design & User Experience",
+          "Hosting & Maintenance",
+          "Tech Advice & Strategy",
         ],
       },
     },

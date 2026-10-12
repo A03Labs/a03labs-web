@@ -6,7 +6,7 @@ const SITE_URL = "https://a03labs.com";
 const PAGE_URL = `${SITE_URL}/contact`;
 const TITLE = "Contact — A03 Labs";
 const DESCRIPTION =
-  "Start a project with A03 Labs. Tell us what you're building and we'll reply within one business day with a plan — scope, architecture direction, and a cost range in writing.";
+  "Start a project with A03 Labs. Tell us about your idea and we'll reply within one business day with clear next steps, timeline, and an honest quote in writing.";
 const OG_IMAGE = `${SITE_URL}/images/og-image.png`;
 
 export function meta({ }: Route.MetaArgs) {
@@ -16,7 +16,7 @@ export function meta({ }: Route.MetaArgs) {
     {
       name: "keywords",
       content:
-        "contact A03 Labs, hire software studio, start a project, software development enquiry, product design agency contact",
+        "contact A03 Labs, hire software studio, build website, build mobile app, start a project, web development studio contact, product design contact",
     },
     { name: "robots", content: "index, follow" },
     { name: "author", content: "A03 Labs" },
