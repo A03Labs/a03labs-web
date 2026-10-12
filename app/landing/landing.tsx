@@ -105,7 +105,7 @@ const projects = [
     category: "Portfolio · Web App",
     description:
       "A personal brand site for a certified lifestyle coach, built to convert visitors into discovery-session bookings.",
-    link: "https://www.dribisohart.com/",
+    link: "https://www.dribiso.com/",
     image: "/images/projects/dr-ibiso.png",
   },
   {
@@ -113,7 +113,7 @@ const projects = [
     category: "Lifestyle · Web App",
     description:
       "A coaching platform bringing together courses, workshops, and content under one brand for a growing personal-development business.",
-    link: "https://lifematicswithdribisohart.com/",
+    link: "https://lifematicslifestyle.com/",
     image: "/images/projects/lifematics.png",
   },
   {
