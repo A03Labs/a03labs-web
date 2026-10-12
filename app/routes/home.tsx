@@ -1,5 +1,6 @@
 import type { Route } from "./+types/home";
 import { Landing } from "../landing/landing";
+import { SOCIAL_LINKS } from "../contact/contact-details";
 
 const SITE_URL = "https://a03labs.com";
 const TITLE = "A03 Labs — Websites, Apps & Digital Product Studio";
@@ -52,6 +53,7 @@ export function meta({ }: Route.MetaArgs) {
         email: "hello@a03labs.com",
         priceRange: "$$",
         areaServed: "Worldwide",
+        sameAs: SOCIAL_LINKS.map((s) => s.href),
         serviceType: [
           "Web & Mobile Apps",
           "Design & User Experience",

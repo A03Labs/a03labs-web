@@ -8,7 +8,9 @@ import {
   PHONE_DISPLAY,
   TEL_HREF,
   WHATSAPP_HREF,
+  SOCIAL_LINKS,
 } from "./contact-details";
+import { getSocialIcon } from "../components/social-icons";
 
 const projectTypes = [
   "Web & Mobile Apps",
@@ -367,7 +369,24 @@ export function Contact() {
                         </a>
                       </dd>
                     </div>
-                  
+                    <div className="py-4">
+                      <dt className="text-xs text-teal-200/70">// Social media</dt>
+                      <dd className="mt-2.5 flex flex-wrap gap-2">
+                        {SOCIAL_LINKS.map((item) => (
+                          <a
+                            key={item.name}
+                            href={item.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={`A03 Labs on ${item.name}`}
+                            className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1.5 text-xs text-white transition-colors hover:bg-white/20"
+                          >
+                            {getSocialIcon(item.name, "h-3.5 w-3.5")}
+                            <span>{item.name}</span>
+                          </a>
+                        ))}
+                      </dd>
+                    </div>
                   </dl>
                 </div>
               </Reveal>
