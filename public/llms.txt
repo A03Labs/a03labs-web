@@ -40,6 +40,9 @@ cycle instead of a status update once a sprint.
 
 ## Selected work
 
+- **AIM VFX** (https://aimvfx.co/) — Bold digital showcase and portfolio for a
+  creative design and motion studio, built to spotlight high-impact visual
+  effects, 3D animation, and brand storytelling.
 - **Dr Ibiso Hart** (https://www.dribisohart.com/) — Personal brand site for a
   certified lifestyle coach, built to convert visitors into discovery-session
   bookings.

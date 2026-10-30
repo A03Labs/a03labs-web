@@ -117,6 +117,14 @@ const projects = [
     image: "/images/projects/culangex.png",
   },
   {
+    name: "AIM VFX",
+    category: "Design & Motion Studio",
+    description:
+      "A bold digital showcase built for a creative studio to spotlight high-impact motion design, visual effects, and brand storytelling.",
+    link: "https://aimvfx.co/",
+    image: "/images/projects/aimvfx.png",
+  },
+  {
     name: "Dr Ibiso Hart",
     category: "Coaching & Booking Website",
     description:
